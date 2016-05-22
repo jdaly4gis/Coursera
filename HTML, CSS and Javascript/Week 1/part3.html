@@ -1,0 +1,184 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 2: HTML, CSS and Javascript">
+    <meta name="keywords" content="HTML,CSS, Javascript">
+    <meta name="author" content="John Daly">
+    <title>Dating Website</title>
+    <style>
+      fieldset
+        {
+          background:lightyellow;
+          border:10px solid yellow;
+          margin-bottom:10px;
+          width:720px;
+        }
+      label
+      {
+        width:180px;
+        display:inline-block;
+        text-align:right;
+      }
+
+      label:hover, input:hover
+      {
+        font-size:30px;
+      }
+
+      td
+      {
+          vertical-align: top;
+      }
+      .floaters
+      {
+        width:auto;
+      }
+      .rangetext
+      {
+        display:inline-block;
+        color:white;
+        height:20px;
+        width:40px;
+        text-align:center;
+        vertical-align: top;
+        border: 1px solid red;
+        background-color:red;
+        padding:3px;
+      }
+      .purple
+      {
+        border: 1px solid purple;
+        background-color:purple;
+      }
+      textarea
+      {
+        height:50px;
+        width:360px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div>
+
+      <p><h1>Please Enter Your Details For Our Dating Website!</h1></p>
+      <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+          <section>
+            <fieldset>
+                  <legend>Your Face</legend>
+                  <table>
+                    <tr>
+                      <td><label for="userImage">Your Image:</label></td>
+                      <td><input type="file" id="userImage" name="userImage" required></td>
+                    </tr>
+                    <tr>
+                      <td><label for="preview">Preview:</label></td>
+                      <td><img id="preview" width="200"></td>
+                    </tr>
+                  </table>
+            </fieldset>
+          </section>
+          <br>
+          <section>
+            <fieldset>
+                  <legend>Your General Details</legend>
+                  <table>
+                    <tr>
+                      <td><label for="fullname">Name:</label></td>
+                      <td><input type="text" id="fullname" name="fullname" placeholder="Your full name" autofocus required></td>
+                    </tr>
+                    <tr>
+                      <td><label for="gender">Gender:</label></td>
+                      <td>
+                          <input type="radio" id="gender" name="gender" value="Male" required><span class="floaters">Male</span>
+                          <input type="radio" id="gender" name="gender" value="Female" required><span class="floaters">Female</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label for="age">Age:</label></td>
+                      <td>
+                          <input type="number" id="age" name="age" required>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label for="date">Date of birth:</label></td>
+                      <td>
+                          <input type="date" id="date" name="date">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label for="color">Favorite color:</label></td>
+                      <td>
+                          <input type="color" id="color" name="color">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label for="country">Which country:</label></td>
+                      <td>
+                          <select name="country" id="country">
+                            <option value="unselected">No Selection</option>
+                            <option value="us">United States</option>
+                            <option value="aut">Australia</option>
+                            <option value="bra">Brazil</option>
+                            <option value="grc">Greece</option>
+                            <option value="mex">Mexico</option>
+                            <option value="phl">Philippines</option>
+                            <option value="pri">Puerto Rico</option>
+                          </select>
+                      </td>
+                    </tr>
+                </table>
+            </fieldset>
+          </section>
+          <br>
+          <section>
+            <fieldset>
+                  <table>
+                    <tr>
+                      <td>
+                        <label for="height">Height:</label>
+                        <span class="floaters rangetext">Short</span><input type="range" min="0" max="100" id="height" name="height"><span class="floaters rangetext purple">Tall</span>
+                          <br>
+                          <label for="salary">Salary:</label>
+                       <span class="floaters rangetext">Poor</span><input type="range" min="0" max="100" id="salary" name="salary"><span class="floaters rangetext purple">Rich</span></td>
+                      </td>
+                    </tr>
+                  </table>
+            </fieldset>
+          </section>
+          <br>
+          <section>
+            <fieldset>
+                  <legend>Your Contact Information</legend>
+                  <table>
+                    <tr>
+                      <td><label for="email">Email:</label></td>
+                      <td><input type="email" id="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                      <td><label for="telephone">Mobile:</label></td>
+                      <td><input type="tel" id="telephone" name="telephone"></td>
+                    </tr>
+                    <tr>
+                      <td><label for="address">Address:</label></td>
+                      <td><textarea rows="4" cols="50" id="address" name="address"></textarea></td>
+                    </tr>
+                    <tr>
+                      <td><label for="contact">Method to contact you:</label></td>
+                      <td>
+                        <input type="checkbox" name="contact" value="email">Email
+                        <input type="checkbox" name="contact" value="whatsapp">WhatsApp
+                        <input type="checkbox" name="contact" value="inappchat">InApp chat
+                      </td>
+                    </tr>
+                  </table>
+            </fieldset>
+          </section>
+          <br>
+          <input type="submit" value="Submit">
+      </form>
+    </div>
+    <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+  </body>
+</html>

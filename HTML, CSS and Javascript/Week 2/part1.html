@@ -1,0 +1,43 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 1: HTML, CSS and Javascript">
+    <meta name="keywords" content="HTML,CSS, Javascript">
+    <meta name="author" content="John Daly">
+    <title>Color Picker</title>
+
+  <script>
+    var target;
+    var max_value = 20;
+    var finished = false;
+    var guess_input;
+    var guess_count = 0;
+
+
+    var colors =
+              [
+                  "aqua","blue","coral", "darkorchid","fuchsia","green",
+                  "honeydew", "indigo", "khaki","lavender","magenta",
+                  "navy","orange","pink","red", "sienna", "turquoise",
+                  "violet","wheat","yellow"
+              ];
+
+function do_game()  {
+
+  target = colors[Math.floor(Math.random() * max_value)];
+  alert(target);
+
+  do
+  {
+      guess_input = prompt("I have picked a color from the following list: \n\n" + colors + "\n\nCan you guess which one it is?")
+      guess_count += 1;
+
+  } while(guess_input != target)
+}
+
+  </script>
+  </head>
+  <body onload="do_game()">
+  </body>
+</html>

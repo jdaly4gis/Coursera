@@ -1,0 +1,132 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 1: HTML, CSS and Javascript">
+    <meta name="keywords" content="HTML,CSS, Javascript">
+    <meta name="author" content="John Daly">
+    <title>Dating Website</title>
+  </head>
+  <body>
+    <div>
+
+      <p><h1>Please Enter Your Details For Our Dating Website!</h1></p>
+      <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+          <section>
+            <fieldset>
+                  <legend>Your Face</legend>
+                  <table>
+                    <tr>
+                      <td><label for="userImage">Your Image:</td>
+                      <td><input type="file" id="userImage" name="userImage" required></td>
+                    </tr>
+                    <tr>
+                      <td><label for="preview">Preview</td>
+                      <td><img id="preview" src=""></td>
+                    </tr>
+                  </table>
+            </fieldset>
+          </section>
+          <br>
+          <section>
+            <fieldset>
+                  <legend>Your General Details</legend>
+                  <table>
+                    <tr>
+                      <td><label for="fullname">Name:</label></td>
+                      <td><input type="text" id="fullname" name="fullname" placeholder="Your full name" autofocus required></td>
+                    </tr>
+                    <tr>
+                      <td><label for="gender">Gender:</label></td>
+                      <td>
+                          <input type="radio" id="gender" name="gender" value="Male" required>Male
+                          <input type="radio" id="gender" name="gender" value="Female" required>Female
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label for="age">Age:</label></td>
+                      <td>
+                          <input type="number" id="age" name="age" required>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label for="date">Date of birth:</label></td>
+                      <td>
+                          <input type="date" id="date" name="date">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label for="color">Favorite color:</label></td>
+                      <td>
+                          <input type="color" id="color" name="color">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label for="country">Which country:</label></td>
+                      <td>
+                          <select name="country" id="country">
+                            <option value="unselected">No Selection</option>
+                            <option value="us">United States</option>
+                            <option value="aut">Australia</option>
+                            <option value="bra">Brazil</option>
+                            <option value="grc">Greece</option>
+                            <option value="mex">Mexico</option>
+                            <option value="phl">Philippines</option>
+                            <option value="pri">Puerto Rico</option>
+                          </select>
+                      </td>
+                    </tr>
+                </table>
+                  </tr>
+            </fieldset>
+          </section>
+          <br>
+          <section>
+            <fieldset>
+                  <legend>Your Indicators</legend>
+                  <table>
+                    <tr>
+                      <td><label for="height">Height:</td>
+                      <td>Short <input type="range" min="0" max="100" id="height" name="height"> Tall</td>
+                    </tr>
+                    <tr>
+                      <td><label for="salary">Salary:</td>
+                      <td>Poor <input type="range" min="0" max="100" id="salary" name="salary"> Rich</td>
+                    </tr>
+                  </table>
+            </fieldset>
+          </section>
+          <br>
+          <section>
+            <fieldset>
+                  <legend>Your Contact Information</legend>
+                  <table>
+                    <tr>
+                      <td><label for="email">Email:</td>
+                      <td><input type="email" id="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                      <td><label for="tel">Mobile:</td>
+                      <td><input type="tel" id="telephone" name="telephone"></td>
+                    </tr>
+                    <tr>
+                      <td><label for="address">Address:</td>
+                      <td><textarea rows="4" cols="50" id="address" name="address"></textarea></td>
+                    </tr>
+                    <tr>
+                      <td><label for="contact">Method to contact you:</td>
+                      <td>
+                        <input type="checkbox" name="contact" value="email">Email
+                        <input type="checkbox" name="contact" value="whatsapp">WhatsApp
+                        <input type="checkbox" name="contact" value="inappchat">InApp chat
+                      </td>
+                    </tr>
+                  </table>
+            </fieldset>
+          </section>
+          <br>
+          <input type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>

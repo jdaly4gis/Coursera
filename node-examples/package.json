@@ -1,0 +1,14 @@
+{
+  "name": "simplequadsolver",
+  "version": "1.0.0",
+  "description": "A simple solver for Quadratic equations",
+  "main": "solve.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Daly",
+  "license": "ISC",
+  "dependencies": {
+    "prompt": "^1.0.0"
+  }
+}

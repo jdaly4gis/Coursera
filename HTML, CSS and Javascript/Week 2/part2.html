@@ -1,0 +1,64 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 1: HTML, CSS and Javascript">
+    <meta name="keywords" content="HTML,CSS, Javascript">
+    <meta name="author" content="John Daly">
+    <title>Color Picker</title>
+  <script>
+    var target;
+    var max_value = 20;
+    var finished = false;
+    var guess_input;
+    var guess_count = 0;
+
+
+    var colors =
+              [
+                  "aqua","blue","coral", "darkorchid","fuchsia","green",
+                  "honeydew", "indigo", "khaki","lavender","magenta",
+                  "navy","orange","pink","red", "sienna", "turquoise",
+                  "violet","wheat","yellow"
+              ];
+
+function check_guess()  {
+  var message;
+  var color_exists = colors.indexOf(guess_input);
+
+  if (color_exists == -1)  {
+        message = "Sorry, I don't recognize the color ''" + guess_input + "'\n\nPlease Try Again!\n\n";
+  }   else if (guess_input > target) {
+        message = "The color you have picked is alphabetically greater than mine.\n\nPlease Try Again!\n\n";
+  }   else if  (guess_input < target) {
+        message = "The color you have picked is alphabetically lower than mine.\n\nPlease Try Again\n\n";
+  }   else if (guess_input == target)  {
+        message = "Congratulations! You have successfully picked the color in " + guess_count + " guesses\n\n";
+        bodycolor = document.getElementsByTagName("body")[0];
+        bodycolor.style.background = target;
+        finished = true;
+  };
+
+  alert(message);
+
+  return finished;
+}
+
+function do_game()  {
+  var bodycolor;
+
+  target = colors[Math.floor(Math.random() * max_value)];
+  alert(target);  //test alert
+
+  do
+  {
+    guess_input = prompt("I have picked a color from the following list: \n\n" + colors + "\n\nCan you guess which one it is?")
+    guess_count += 1;
+
+  } while(check_guess() == false)
+}
+</script>
+</head>
+<body onload="do_game()">
+</body>
+</html>

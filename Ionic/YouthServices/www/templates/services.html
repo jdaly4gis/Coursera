@@ -1,0 +1,9 @@
+<ion-view view-title="Services">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="service in services" href="#/app/services/{{service}.id}}">
+        {{service.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

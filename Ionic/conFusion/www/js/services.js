@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('conFusion.services', ['ngResource'])
-        .constant("baseURL","http://localhost:3000/")
+        .constant("baseURL","http://192.168.1.2:3000/")
 
         .factory('menuFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
 
@@ -14,18 +14,19 @@ angular.module('conFusion.services', ['ngResource'])
         }])
 
         .factory('promotionFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
-
-            return $resource(baseURL + "promotions/:id");
+                    return $resource(baseURL + "promotions/:id");
 
         }])
 
         .factory('corporateFactory', ['$resource', 'baseURL', function($resource,baseURL) {
+
 
             return $resource(baseURL+"leadership/:id");
 
         }])
 
         .factory('feedbackFactory', ['$resource', 'baseURL', function($resource,baseURL) {
+
 
             return $resource(baseURL+"feedback/:id");
 
@@ -35,29 +36,29 @@ angular.module('conFusion.services', ['ngResource'])
             var favFac = {};
             var favorites = [];
 
-            favorites = $localStorage.getObject('favorites','{}');
+            favFac.addToFavorites = function (index) {
+                for (var i = 0; i < favorites.length; i++) {
+                    if (favorites[i].id == index)
+                        return;
+                }
+                favorites.push({id: index});
+                $localStorage.storeObject('userfavorites', favorites);
+            };
 
-              favFac.addToFavorites = function (index) {
-                  for (var i = 0; i < favorites.length; i++) {
-                      if (favorites[i].id == index)
-                          return;
-                  }
-                  favorites.push({id: index});
-                  $localStorage.storeObject('favorites',favorites);
-              };
             favFac.deleteFromFavorites = function (index) {
-                  for (var i = 0; i < favorites.length; i++) {
-                      if (favorites[i].id == index) {
-                          favorites.splice(i, 1);
-                      }
+                for (var i = 0; i < $localStorage.getObject('userfavorites',{}).length; i++) {
 
-                  $localStorage.storeObject('favorites',favorites);
-                  }
-              }
+                    if ($localStorage.getObject('userfavorites',{})[i].id == index)  {
+                          favorites.splice(i,1);
+                    }
+                }
+                $localStorage.storeObject('userfavorites', favorites);
 
-              favFac.getFavorites = function () {
-                  return favorites;
-              };
+           }
+
+            favFac.getFavorites = function () {
+                    return favorites;
+            };
 
             return favFac;
 

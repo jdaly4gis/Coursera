@@ -1,7 +1,7 @@
 {
-  "name": "confusion",
+  "name": "test",
   "version": "1.1.1",
-  "description": "conFusion: An Ionic project",
+  "description": "test: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
@@ -20,16 +20,7 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard",
-    "de.appplant.cordova.plugin.local-notification",
-    {
-      "locator": "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
-      "id": "cordova-plugin-x-toast"
-    },
-    "cordova-plugin-camera"
+    "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": [
-    "android",
-    "ios"
-  ]
+  "cordovaPlatforms": []
 }

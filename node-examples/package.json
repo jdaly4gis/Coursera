@@ -9,6 +9,9 @@
   "author": "John Daly",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "morgan": "^1.7.0",
     "prompt": "^1.0.0",
     "yargs": "^4.7.1"
   }
